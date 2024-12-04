@@ -1,0 +1,12 @@
+{
+    "ID": "flow.launcher.plugin.shortcut",
+    "ActionKeyword": "sc",
+    "Name": "Shortcut",
+    "Description": "Search and create stories in Shortcut (formerly Clubhouse)",
+    "Author": "Mike Gyi",
+    "Version": "1.0.0",
+    "Language": "TypeScript",
+    "Website": "https://github.com/yourusername/flow-launcher-shortcut",
+    "ExecuteFileName": "node.bat",
+    "IcoPath": "Images\\app.png"
+} 

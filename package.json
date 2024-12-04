@@ -1,0 +1,20 @@
+{
+  "name": "flow-launcher-shortcut",
+  "version": "1.0.0",
+  "description": "Flow Launcher plugin for Shortcut (formerly Clubhouse)",
+  "main": "main.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "author": "Mike Gyi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "open": "^9.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  }
+} 
