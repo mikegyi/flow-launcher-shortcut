@@ -10,13 +10,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     
     - name: Set up Node.Js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
         node-version: '20.x'
+        cache: 'npm'
     
     - name: Get version
       id: version
@@ -26,12 +29,14 @@ jobs:
         prop_path: 'Version'
     
     - name: Install dependencies
-      run: |
-        npm install
-        zip -r Flow.Launcher.Plugin.Shortcut.zip . -x '*.git*'
+      run: npm ci
+        
+    - name: Create ZIP archive
+      run: zip -r Flow.Launcher.Plugin.Shortcut.zip . -x '*.git*'
     
     - name: Publish
       uses: softprops/action-gh-release@v1
+      if: success()
       with:
         files: 'Flow.Launcher.Plugin.Shortcut.zip'
         tag_name: "v${{steps.version.outputs.prop}}"
